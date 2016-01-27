@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2015 a las 00:04:00
+-- Tiempo de generación: 14-01-2016 a las 22:41:50
 -- Versión del servidor: 5.6.15-log
 -- Versión de PHP: 5.4.24
 
@@ -75,7 +75,18 @@ CREATE TABLE IF NOT EXISTS `deportes` (
   `id_deporte` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_deporte`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=12 ;
+
+--
+-- Volcado de datos para la tabla `deportes`
+--
+
+INSERT INTO `deportes` (`id_deporte`, `descripcion`) VALUES
+(1, 'Hockey'),
+(2, 'Futbol'),
+(9, 'Handball'),
+(8, 'Voley'),
+(11, 'Tenis');
 
 -- --------------------------------------------------------
 
@@ -125,6 +136,8 @@ CREATE TABLE IF NOT EXISTS `items` (
 
 CREATE TABLE IF NOT EXISTS `login_por_usuario` (
   `id_login_por_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_persona` int(11) NOT NULL,
+  `fecha_hora` datetime NOT NULL,
   PRIMARY KEY (`id_login_por_usuario`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
